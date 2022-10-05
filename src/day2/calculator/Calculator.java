@@ -9,6 +9,6 @@ public class Calculator {
     }
 
     public void plus(){
-
+        System.out.println(numberGenerator.generate(2000));
     }
 }
