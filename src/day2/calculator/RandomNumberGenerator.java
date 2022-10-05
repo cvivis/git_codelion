@@ -1,9 +1,13 @@
 package day2.calculator;
 
+import java.util.Random;
+
 public class RandomNumberGenerator implements NumberGenerator {
 
+    Random random = new Random();
+    int ranNum = random.nextInt(10);
     @Override
-    public int generate(int num) {
-        return 2000 * num;
+    public int generate() {
+        return ranNum;
     }
 }
