@@ -3,36 +3,30 @@ package day2;
 import java.util.Random;
 
 public interface RandomCalculatorCal {
+    Random random = new Random();
+    int ran = random.nextInt(10);
     public abstract void cal(int num);
 }
 
 class Plus implements RandomCalculatorCal{
-    Random random = new Random();
-    int ranNum = random.nextInt(10);
     @Override
     public void cal(int num) {
-        System.out.println(num + ranNum);
+        System.out.println(num + ran);
     }
 }
 class Minus implements RandomCalculatorCal{
-    Random random = new Random();
-    int ranNum = random.nextInt(10);
     @Override
     public void cal(int num) {
-        System.out.println(num - ranNum);
+        System.out.println(num - ran);
     }
 }
 class Multiple implements RandomCalculatorCal{
-    Random random = new Random();
-    int ranNum = random.nextInt(10);
     @Override
     public void cal(int num) {
-        System.out.println(num * ranNum);
+        System.out.println(num * ran);
     }
 }
 class Divide implements RandomCalculatorCal{
-    Random random = new Random();
-    int ranNum = random.nextInt(10);
     @Override
     public void cal(int num) {
         if(num == 0){
@@ -40,10 +34,12 @@ class Divide implements RandomCalculatorCal{
         }
         else{
             float divideNum = (float)num;
-            System.out.println(divideNum + ranNum);
+            System.out.println(divideNum + ran);
         }
 
     }
 }
+
+
 
 
