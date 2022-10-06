@@ -9,5 +9,12 @@ public class RandomNumberGenerater implements NumberSetCreater{
         Random random = new Random();
         return random.nextInt(num);
     }
+
+    @Override
+    public String generate() {
+        Random random = new Random();
+        return String.valueOf((char)(random.nextInt(26)+65));
+    }
+
 }
 
