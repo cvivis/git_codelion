@@ -1,4 +1,4 @@
-package day3.LikeLion;
+package day3;
 
 import java.util.ArrayList;
 import java.util.List;
