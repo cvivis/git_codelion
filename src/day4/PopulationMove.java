@@ -46,10 +46,15 @@ public class PopulationMove {
     @Override
     public String toString() {
         adm_codeMatch();
-        return "PopulationMove{" +
-                "fromSido=" + adm_code.get(fromSido) +
-                ", toSido=" + adm_code.get(toSido) +
-                '}';
+        if(adm_code.get(fromSido) != null && adm_code.get(toSido)!=null){
+            return "PopulationMove{" +
+                    "fromSido=" + adm_code.get(fromSido) +
+                    ", toSido=" + adm_code.get(toSido) +
+                    '}';
+        }
+        else{
+            return "";
+        }
     }
 
 }
