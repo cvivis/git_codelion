@@ -5,7 +5,9 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PopulationStatistics {
     public void readChar(String fileName) throws IOException {
@@ -79,7 +81,7 @@ public class PopulationStatistics {
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
             for(String str : strs){
-                bufferedWriter.write(str+"\n");
+                bufferedWriter.write(str);
             }
             System.out.println("Write 완료");
             bufferedWriter.close();
@@ -88,22 +90,39 @@ public class PopulationStatistics {
         }
     }
 
+    public Map<String, Integer> getMoveCntMap(List<PopulationMove> pml) {
+        Map<String, Integer> moveCntmap = new HashMap<>();
+        for (PopulationMove pm : pml) {
+            String key = pm.getFromSido() + "," + pm.getToSido();
+            if (moveCntmap.get(key) == null) {
+                moveCntmap.put(key, 1);
+            }
+            moveCntmap.put(key, moveCntmap.get(key) + 1);
+        }
+        return moveCntmap;
+    }
     public static void main(String[] args) throws IOException {
         String address = "/Users/admin/Documents/data/2021_인구관련연간자료_20220927_66125.csv";
         PopulationStatistics populationStatistics = new PopulationStatistics();
         List<PopulationMove> pml = populationStatistics.parse(address);
-        List<String> pmlWrite = new ArrayList<>();
+        List<String> pmlWrite = new ArrayList<>(); // for Write
+        populationStatistics.parse(address);
         for(PopulationMove pm : pml){
-            pmlWrite.add(populationStatistics.fromToString(pm)) ;
-            System.out.println(populationStatistics.fromToString(pm));
-
+//            pmlWrite.add(populationStatistics.fromToString(pm)) ;
+////            System.out.println(populationStatistics.fromToString(pm));
+//            pm.toString();
+        }
+        Map<String,Integer> map = populationStatistics.getMoveCntMap(pml);
+        for(String key : map.keySet()){
+            String s = String.format("값:%s, 갯수:%d\n",key,map.get(key));
+            pmlWrite.add(s);
+//            System.out.printf("값:%s, 갯수:%d\n",key,map.get(key));
         }
 
 //        populationStatistics.readChar(address);
 //        populationStatistics.readLine(address);
 //        populationStatistics.readLine2(address);
-//        populationStatistics.parse(address);
 //            populationStatistics.createAfile("frome_to.txt");
-        populationStatistics.write(pmlWrite,"writeSido.txt");
+        populationStatistics.write(pmlWrite,"SidoCount.txt");
     }
 }
