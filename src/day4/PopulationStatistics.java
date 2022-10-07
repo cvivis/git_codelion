@@ -79,8 +79,9 @@ public class PopulationStatistics {
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
             for(String str : strs){
-                bufferedWriter.write(str);
+                bufferedWriter.write(str+"\n");
             }
+            System.out.println("Write 완료");
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -91,7 +92,9 @@ public class PopulationStatistics {
         String address = "/Users/admin/Documents/data/2021_인구관련연간자료_20220927_66125.csv";
         PopulationStatistics populationStatistics = new PopulationStatistics();
         List<PopulationMove> pml = populationStatistics.parse(address);
+        List<String> pmlWrite = new ArrayList<>();
         for(PopulationMove pm : pml){
+            pmlWrite.add(populationStatistics.fromToString(pm)) ;
             System.out.println(populationStatistics.fromToString(pm));
 
         }
@@ -99,7 +102,8 @@ public class PopulationStatistics {
 //        populationStatistics.readChar(address);
 //        populationStatistics.readLine(address);
 //        populationStatistics.readLine2(address);
-        populationStatistics.parse(address);
+//        populationStatistics.parse(address);
 //            populationStatistics.createAfile("frome_to.txt");
+        populationStatistics.write(pmlWrite,"writeSido.txt");
     }
 }
