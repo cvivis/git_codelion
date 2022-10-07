@@ -43,15 +43,21 @@ public class PopulationStatistics {
                 Paths.get(data), StandardCharsets.UTF_8)){
             String line;
             String[] lineSplit;
+//            int i = 100;
 //            HashMap<Integer,Integer> popMove = new HashMap<>();
             ArrayList<PopulationMove> populationMoveArrayList = new ArrayList<>();
             while((line = br.readLine())!=null){
+//                line = br.readLine();
                  lineSplit = line.split(",");
                  PopulationMove populationMove = new PopulationMove(Integer.parseInt(lineSplit[0]),Integer.parseInt(lineSplit[6]));
                 populationMoveArrayList.add(populationMove);
-
+//                (line = br.readLine())!=null
+//                i -= 1;
             }
-            System.out.println(populationMoveArrayList.toString());
+//            System.out.println(populationMoveArrayList);
+            for(PopulationMove pm: populationMoveArrayList){
+                System.out.println(pm.toString());
+            }
         }catch (IOException e){
             throw new RuntimeException();
         }
