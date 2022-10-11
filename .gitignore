@@ -30,3 +30,5 @@ bin/
 *.xml
 
 java_exercise1005.iml
+
+*.iml

@@ -14,11 +14,10 @@ public class Solution {
     public int solutionB(int n){
         //연산이용 몫, 나머지
         int answer = 0;
-        while(n>9){
+        while(n>0){
             answer += n % 10;
             n = n / 10;
         }
-        answer += n;
         return answer;
     }
 
