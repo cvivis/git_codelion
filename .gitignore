@@ -32,3 +32,5 @@ bin/
 java_exercise1005.iml
 
 *.iml
+
+*.meta
