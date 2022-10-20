@@ -46,7 +46,7 @@
 - Spring
 - ApplicationContext, Bean 동작원리 
 - TDD 설계 후 stack 구현 
-ㄴ https://github.com/cvivis/java_algorithm
+- ㄴ https://github.com/cvivis/java_algorithm
 
 
 
