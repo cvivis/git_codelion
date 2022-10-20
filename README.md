@@ -40,4 +40,13 @@
 - sql파일 생성코드 및 워크밴치 확인 
 - sql문 실습
 
+## week5
+- 코드 구조 리팩토리 
+> 메소드 분리, 템플릿 메소드 분리, 인터페이스 분리, 팩토리 분리 
+- Spring
+- ApplicationContext, Bean 동작원리 
+- TDD 설계 후 stack 구현 
+ㄴ https://github.com/cvivis/java_algorithm
+
+
 
