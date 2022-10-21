@@ -48,6 +48,8 @@
 - ApplicationContext, Bean 동작원리 
 - TDD 설계 후 stack 구현 
 - ㄴ https://github.com/cvivis/java_algorithm
+- UserDao 템플릿 메소드 분리
+- JdbcContextWithStatementStrategy 적용 
 
 
 
